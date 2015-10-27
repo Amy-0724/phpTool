@@ -7,7 +7,7 @@ v2.1 注释采集错误
 <a href="http://down.benhuang1024.com" target="_blank">down.benhuang1024.com</a>
 
 #Weiphp
-##GetMsg获取推送信息并进行推送微信模版
+###GetMsg获取推送信息并进行推送微信模版
 ##Heart用户信息处理模块
 1. 个人信息模块
 2. 检验模块
