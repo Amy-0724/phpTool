@@ -1,5 +1,4 @@
-# phpTool
-此功能全部基于php进行扩展开发
+功能全部基于php进行扩展开发
 php是最好的语言
 #Gathering
 v2.1 注释采集错误
