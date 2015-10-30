@@ -1,11 +1,11 @@
 功能全部基于php进行扩展开发
 php是最好的语言
-#Gathering采集单页面工具
+#Gathering:采集单页面工具
 v2.1 注释采集错误
 采集单页面,转换相对路径,打包下载
 <a href="http://down.benhuang1024.com" target="_blank">down.benhuang1024.com</a>
-#PromotionRanking竞价排名工具
-##baiduMobileRank百度竞价排名查询
+#PromotionRanking:竞价排名工具
+####baiduMobileRank:百度竞价排名查询
 #Weiphp扩展
 ####GetMsg:获取推送信息并进行推送微信模版
 ####Heart:绑定用户信息处理
