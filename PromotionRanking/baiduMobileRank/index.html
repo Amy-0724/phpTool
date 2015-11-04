@@ -1,4 +1,4 @@
-<!DCOYTPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
@@ -7,10 +7,18 @@
 </head>
 <body>
 <form action="search.php" method="post">
-	<textarea id="text" name="text" style="height:600px;width:400px;" value="输入关键词">
+
+	<div class="pull-left col-md-5"><p>输入关键词,格式:<span class="text-danger">关键词,金额(如果填写则估算排名价格)-换行</span></p>
+	<textarea class="form-control"  name="keywords" style="height:600px;width:400px;" value="" >
 		
 	</textarea>
-	<input type="text" name="url" id="url" value="输入url"  />	
+	</div>
+	<div class="pull-left col-md-5"><p>输入展示URL,格式:<span class="text-danger">URL-换行</span></p>
+	<textarea class="form-control" name="urls" style="height:600px;width:400px;" value="" >
+
+	</textarea>
+	</div>
+	<div class="clearfix"></div>
 	<input type="submit" name="submit" id="submit" value="检测" />
 </form>
 
