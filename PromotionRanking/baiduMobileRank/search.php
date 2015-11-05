@@ -14,18 +14,32 @@ foreach ($keyword_arr as $key) {
    $get_arr = pq(".ec_site");
     foreach($get_arr as $gKey=>$gVal){
         $gValHtml = pq($gVal)->html();
-        if(in_array($gValHtml,$url_arr)){
-            $sql = "INSERT INTO `mobile_baidu` (keyword,url,rank,`timestamp`) VALUES ($key,$gValHtml,$gKey+1,now())";
-            echo $sql;
-            echo $gValHtml;
-            echo '<br>',$gKey;
-            echo 'a';
+        if(empty($gValHtml)){
+            continue;
+        }elseif(!is_array($gValHtml)){
+            $gValHtmls[] = $gValHtml;
         }else{
-            echo '<br>',$gValHtml;
-            echo '<br>',$gKey;
+            $gValHtmls = $gValHtml;
         }
+
+
+        foreach($url_arr as $uKey=>$urlone) {
+            if (in_array($urlone,$gValHtmls)) {
+//                $sql = "INSERT INTO `mobile_baidu` (keyword,url,rank,`timestamp`) VALUES ($key,$gValHtml,$gKey+1,now())";
+                $rankVal['keyword'] =  $key;
+                $rankVal['url'] =  $gValHtml;
+                $rankVal['rank'] =  $gKey+1;
+                $rankVal_arr[] = $rankVal;
+            } else {
+                if($uKey!=0) {
+                    $rankVal['keyword'] = $key;
+                    $rankVal['url'] = $gValHtml;
+                    $rankVal['rank'] = 'no';
+                    $rankVal_arr[] = $rankVal;
+                }
+            }
+        }
+        unset($gValHtmls);
     }
 }
-
-
-
+include 'show.php';
