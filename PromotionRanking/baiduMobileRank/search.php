@@ -4,6 +4,10 @@ include 'Lib/Smarty/Smarty.class.php';
 
 $keywords = trim($_POST['keywords']);
 $urls = trim($_POST['urls']);
+if(empty($keywords)&empty($urls)){
+	echo '请输入争取参数';
+	exit;
+}
 $keyword_arr = explode("\n",$keywords);
 $url_arr = explode("\n",$urls);
 

@@ -2,25 +2,84 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>关键词排名查询</title>
+	<link rel="shortcut icon" href="http://192.168.1.51:81/speradMobile/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="http://192.168.1.51:81/speradMobile/favicon.ico" type="image/vnd.microsoft.icon">
+
 <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+<style>
+body{/* fallback */
+			background-color:#5cb85c;
+			/* chrome 2+, safari 4+; multiple color stops */
+			background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0.32,#080A3e),color-stop(0.66,#102c7d), color-stop(0.83,#5cb85c));
+			/* chrome 10+, safari 5.1+ */
+			background-image:-webkit-linear-gradient(#080A3e, #5cb85c);
+			/* firefox; multiple color stops */
+			background-image:-moz-linear-gradient(top,#080A3e, #5cb85c);
+			/* ie 6+ */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#063053', endColorstr='#5cb85c');
+			/* ie8 + */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#063053', endColorstr='#5cb85c')";
+			/* ie10 */
+			background-image: -ms-linear-gradient(#080A3e, #5cb85c);
+			/* opera 11.1 */
+			background-image: -o-linear-gradient(#080A3e, #5cb85c);
+			/* The "standard" */
+			background-image: linear-gradient(#080A3e, #5cb85c);
+}
+.header{margin:auto;margin-top:4%;width:87%;color:#fff;}
+.content{margin:auto;width:90%;color:#fff;margin-bottom: 14px;}
+/*.form-control{width:500px;height: 400px;}*/
+#pp1,#pp2{    margin-left: 20px;padding: 0;border-radius: 6px;-webkit-border-radius: 6px;-moz-border-radius: 6px;-ms-border-radius: 6px;line-height:30px;background-color: #38bbff;}
+#pp1 p,#pp2 p{padding-left: 10px;}
+#pp1 p span,#pp2 p span{color:#fefefe ;}
+#submit{margin:20px;width: 20%;height: 40px;letter-spacing: 10px;font-size: 20px;border-radius: 15px;-webkit-border-radius: 15px;-moz-border-radius: 15px;-ms-border-radius: 15px;border: 1px solid rgba(255,255,255,0.25);color: rgba(255,255,255,0.5);background-color: rgba(255,255,255,0.05);}
+#submit:hover{background-color: #fff;color: #31708f;font-weight: 800;font-size: 24px;}
+.footer{    margin-top: 15px;border-top: 1px solid rgba(255,255,255,0.3);height: 68px; width: 90%; margin: auto;color: #fff;}
+.contect{text-align: center;height: 50px;line-height: 50px;}
+.footer ul li{float: left;width: 25%;height:40px;}
+</style>
 </head>
 <body>
-<form action="search.php" method="post">
+<div class="stars">  
+</div>
 
-	<div class="pull-left col-md-5"><p>输入关键词,格式:<span class="text-danger">关键词,金额(如果填写则估算排名价格)-换行</span></p>
-	<textarea class="form-control"  name="keywords" style="height:600px;width:400px;" value="" >
-		
+<div class="header">
+	<div class="row-fluid">
+		<div class="span12">
+		<h1>关键词排名查询</h1>
+		<h4>两种采集方式不同(单条采集只能处理一个URL),优先使用谷歌浏览器</h4>
+		</div>
+	</div>
+</div>
+
+<div class="content">
+<form name="form1" action="" method="post">
+	<div class="pull-left col-md-5" id="pp1"><p>输入关键词,格式:<span class="text-danger">关键词-换行</span></p>
+	<textarea class="form-control"  name="keywords" style="height: 400px;min-width: 500px;"  value="" >	
 	</textarea>
 	</div>
-	<div class="pull-left col-md-5"><p>输入展示URL,格式:<span class="text-danger">URL-换行</span></p>
-	<textarea class="form-control" name="urls" style="height:600px;width:400px;" value="" >
-
+	<div class="pull-left col-md-5" id="pp2"><p>输入展示URL,格式:<span class="text-danger">URL-换行</span></p>
+	<textarea class="form-control" name="urls" style="height: 400px;min-width: 500px;"  value="" >
 	</textarea>
 	</div>
 	<div class="clearfix"></div>
-	<input type="submit" name="submit" id="submit" value="检测" />
+	<input type="submit" name="submit" id="submit" value="多条检测" onclick="form1.action='search.php';form1.submit();"/>
+	<input type="submit" name="submit" id="submit" value="单条检测" onclick="form1.action='searchOld.php';form1.submit();"/>
 </form>
+</div>
+
+<div class="footer">
+	<br />
+		<ul>
+					
+		
+		<li href="#" target="_blank">author:ben & amy0724</li>
+		<li href="#" target="_blank">E-mail:benhuang1024@163.com</li>
+		</ul>
+</div>
 
 </body>
 </html>
